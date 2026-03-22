@@ -1,22 +1,22 @@
+"use client";
+
 import Container from "@/components/layout/container";
 import Link from "next/link";
 
-export default function NotFound() {
+export default function ArticleError() {
   return (
-    <section className="bg-background-02 py-20 text-foreground">
+    <section className="bg-background py-20 text-foreground">
       <Container>
         <div className="mx-auto max-w-120 text-center">
-          <h1 className="mb-4 text-[32px] font-semibold leading-[120%] tracking-[-0.05em] md:text-5xl">
-            Page not found
-          </h1>
+          <h2 className="mb-4 text-2xl font-semibold tracking-[-0.04em]">Unable to load this article</h2>
           <p className="mb-8 text-foreground-04">
-            The page you are looking for does not exist or may have been moved.
+            Something went wrong while loading the post. Please try again later.
           </p>
           <Link
-            href="/"
+            href="/articles"
             className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
           >
-            Back to home
+            Back to articles
           </Link>
         </div>
       </Container>

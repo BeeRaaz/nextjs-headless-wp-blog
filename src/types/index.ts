@@ -3,15 +3,17 @@ export interface Post {
   date: string;
   modified: string;
   slug: string;
+  author: number;
+  categories?: number[];
   title: { rendered: string };
   content: { rendered: string };
   excerpt: { rendered: string };
   sticky: boolean;
-  _embedded: {
-    author: Author[];
-    replies: Reply[];
-    "wp:featuredmedia": FeaturedMedia[];
-  }
+  _embedded?: {
+    author?: Author[];
+    replies?: Reply[];
+    "wp:featuredmedia"?: FeaturedMedia[];
+  };
 }
 
 export interface Author {
@@ -48,7 +50,7 @@ export interface FeaturedMedia {
         width: number;
         height: number;
         source_url: string;
-      }
-    }
-  }
+      };
+    };
+  };
 }

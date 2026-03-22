@@ -1,13 +1,34 @@
 import BlogCard from "@/components/layout/blog-card";
 import Container from "@/components/layout/container";
-import { getAllPosts } from "@/lib/cms";
+import { getAllPosts } from "@/lib/wp-client";
 import { Post } from "@/types";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+export const revalidate = 300;
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Latest travel stories, photos, and field notes from the road.",
+};
+
 export default async function Home() {
-  const posts: Post[] = await getAllPosts();
-  if (posts.length === 0) return;
+  const posts: Post[] = await getAllPosts().catch(() => []);
+  if (posts.length === 0) {
+    return (
+      <section className="bg-background-02 py-20 text-foreground">
+        <Container>
+          <h1 className="mb-4 text-center text-[32px] font-semibold leading-[120%] tracking-[-0.05em] md:text-5xl">
+            The Roam Report
+          </h1>
+          <p className="mx-auto max-w-120 text-center leading-[150%] text-foreground-04">
+            We could not load articles right now. Please check your WordPress connection and try again.
+          </p>
+        </Container>
+      </section>
+    );
+  }
 
   const featuredPost = posts.find((post) => post.sticky === true) || posts[0];
 
@@ -28,7 +49,7 @@ export default async function Home() {
         </div>
         <Container className="relative z-10">
           <div className="md:max-w-92.5 md:mx-auto">
-            <BlogCard post={featuredPost} />
+            <BlogCard post={featuredPost} isFeaturedArticle={true} />
           </div>
         </Container>
         <div className="absolute bottom-5 text-center text-foreground">
@@ -39,11 +60,11 @@ export default async function Home() {
             viewBox="0 0 8 9"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="mx-auto"
+            className="mx-auto fill-foreground"
+            aria-hidden="true"
           >
             <path
               d="M0 3.486L4.284 7.56L3.23398 7.546L7.57401 3.486V5.418L4.116 8.75H3.40198L0 5.418V3.486ZM3.06598 0H4.508V7.448H3.06598V0Z"
-              fill="#332115"
             />
           </svg>
         </div>
@@ -63,7 +84,14 @@ export default async function Home() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-center"><Link href={'/articles'} className="font-medium leading-[120%] tracking-[-0.02em] text-base text-foreground underline underline-offset-2 hover:no-underline">View all articles</Link></p>
+                <p className="text-center">
+                  <Link
+                    href={"/articles"}
+                    className="font-medium leading-[120%] tracking-[-0.02em] text-base text-foreground underline underline-offset-2 hover:no-underline"
+                  >
+                    View all articles
+                  </Link>
+                </p>
               </>
             )}
           </Container>

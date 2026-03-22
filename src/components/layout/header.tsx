@@ -33,6 +33,7 @@ export default function Header() {
                 <li key={navLink.name}>
                   <Link
                     href={navLink.href}
+                    aria-current={pathname === navLink.href ? "page" : undefined}
                     className={`${pathname === navLink.href ? "text-foreground" : "text-foreground-04"} font-semibold leading-2 tracking-tight text-sm hover:text-foreground transition-colors duration-300`}
                   >
                     {navLink.name}

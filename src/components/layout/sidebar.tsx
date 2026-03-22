@@ -8,7 +8,8 @@ export default function Sidebar() {
           <h1 className="font-xanh leading-[90%] tracking-[-0.01em] text-[80px] mb-10">The Roam Report</h1>
           <Image
             src="/train.svg"
-            alt="Train Image"
+            alt=""
+            aria-hidden="true"
             width={120}
             height={110}
             className="mx-auto mb-6"
@@ -22,43 +23,43 @@ export default function Sidebar() {
           <div className="flex flex-nowrap whitespace-nowrap gap-4 w-max">
             <div className="flex flex-nowrap whitespace-nowrap gap-4 marquee">
               <span>Currently in</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>Dallol, Ethiopia</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>14.2417° N</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>40.3169° E</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
             </div>
             <div className="flex whitespace-nowrap gap-4 marquee">
               <span>Currently in</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>Dallol, Ethiopia</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>14.2417° N</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>40.3169° E</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
             </div>
             <div className="flex whitespace-nowrap gap-4 marquee">
               <span>Currently in</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>Dallol, Ethiopia</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>14.2417° N</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>40.3169° E</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
             </div>
             <div className="flex whitespace-nowrap gap-4 marquee">
               <span>Currently in</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>Dallol, Ethiopia</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>14.2417° N</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
               <span>40.3169° E</span>
-              <Image src="/globe.svg" alt="Globe Icon" width={16} height={16} />
+              <Image src="/globe.svg" alt="" aria-hidden="true" width={16} height={16} />
             </div>
           </div>
         </div>
